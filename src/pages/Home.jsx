@@ -1,8 +1,34 @@
 import React from 'react';
+import Slider from "react-slick";
 
 function Home() {
   return (
+    
     <div className="pt-24">
+      <Slider
+    dots={true}
+    infinite={true}
+    speed={600}
+    slidesToShow={1}
+    slidesToScroll={1}
+    autoplay={true}
+    autoplaySpeed={4000}
+    nextArrow={<SampleNextArrow />}
+    prevArrow={<SamplePrevArrow />}
+  >
+    {[
+      "https://github.com/zasgar17/preFinalWebsite/blob/main/preFinal-Website/ecom2.jpeg?raw=true",
+      "https://github.com/zasgar17/preFinalWebsite/blob/main/preFinal-Website/ecom3.jpeg?raw=true",
+      "https://github.com/zasgar17/preFinalWebsite/blob/main/preFinal-Website/ecom1.jpeg?raw=true",
+      "https://github.com/zasgar17/preFinalWebsite/blob/main/preFinal-Website/ecom4.jpeg?raw=true",
+      "https://github.com/zasgar17/preFinalWebsite/blob/main/preFinal-Website/ecom5.jpeg?raw=true",
+      "https://github.com/zasgar17/preFinalWebsite/blob/main/preFinal-Website/ecom6.jpeg?raw=true",
+    ].map((src, index) => (
+      <div key={index}>
+        <img src={src} alt={`Slide ${index + 1}`} className="w-full h-[500px] object-cover" />
+      </div>
+    ))}
+  </Slider>
       {/* Banner */}
       <div className="text-center bg-[#2e5941] text-white py-6 px-4">
         <h1 className="text-4xl md:text-5xl font-bold font-[cursive] tracking-wide">
@@ -66,6 +92,29 @@ function Home() {
           <li>Student Startup Pitches & Networking Hour</li>
         </ul>
       </section>
-    </div>);}
+    </div>);
+    
+    function SampleNextArrow(props) {
+  const { onClick } = props;
+  return (
+    <div
+      onClick={onClick}
+      className="absolute top-1/2 right-4 transform -translate-y-1/2 z-10 cursor-pointer transition-opacity duration-300 opacity-30 hover:opacity-100 text-white text-4xl"
+    >
+      ❯
+    </div>
+  );
+}
 
+function SamplePrevArrow(props) {
+  const { onClick } = props;
+  return (
+    <div
+      onClick={onClick}
+      className="absolute top-1/2 left-4 transform -translate-y-1/2 z-10 cursor-pointer transition-opacity duration-300 opacity-30 hover:opacity-100 text-white text-4xl"
+    >
+      ❮
+    </div>
+  );
+}}
 export default Home;
