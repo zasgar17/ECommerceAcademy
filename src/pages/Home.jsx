@@ -25,7 +25,7 @@ function Home() {
   ];
   return (
     
-    <div className="pt-2">
+    <div className="pt-0">
       <Slider
     dots={true}
     infinite={true}
@@ -46,13 +46,13 @@ function Home() {
       "https://github.com/zasgar17/preFinalWebsite/blob/main/preFinal-Website/ecom6.jpeg?raw=true",
     ].map((src, index) => (
       <div key={index}>
-        <img src={src} alt={`Slide ${index + 1}`} className="w-full h-[500px] object-cover" />
+        <img src={src} alt={`Slide ${index + 1}`} className="w-full h-[600px] object-cover" />
       </div>
     ))}
   </Slider>
       {/* Banner */}
       <div className="text-center bg-[#2e5941] text-white py-6 px-4">
-        <h1 className="text-4xl md:text-5xl font-bold font-[cursive] tracking-wide">
+        <h1 className="text-4xl md:text-5xl font-bold  tracking-wide">
           WELCOME TO E-COMMERCE CLUB
         </h1>
       </div>

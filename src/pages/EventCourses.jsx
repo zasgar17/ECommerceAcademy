@@ -43,20 +43,20 @@ function EventCourses() {
   const eventsToShow = activeTab === "upcoming" ? upcomingEvents : pastEvents;
 
   return (
-    <div className="pt-24 pb-20 min-h-screen bg-[#2e1b1b] text-white">
+    <div className="pt-10 pb-20 min-h-screen bg-[#0000] text-white">
       <div className="px-6 md:px-20 py-8">
-        <h1 className="text-4xl md:text-5xl font-bold text-green-400 mb-6">
+        <h1 className="text-4xl md:text-5xl font-bold text-green-900 mb-6">
           Events & Courses
         </h1>
 
         {/* Tabs */}
-        <div className="flex gap-4 mb-8 border-b border-green-400">
+        <div className="flex gap-4 mb-8 border-b border-green-800">
           <button
             onClick={() => setActiveTab("upcoming")}
             className={`py-2 px-4 font-semibold rounded-t-lg transition ${
               activeTab === "upcoming"
-                ? "bg-green-400 text-[#2e1b1b]"
-                : "text-green-400 hover:bg-green-600 hover:bg-opacity-20"
+                ? "bg-green-800 text-white"
+                : "text-green-900 hover:bg-green-900 hover:bg-opacity-20"
             }`}
           >
             Upcoming Events
@@ -65,8 +65,8 @@ function EventCourses() {
             onClick={() => setActiveTab("past")}
             className={`py-2 px-4 font-semibold rounded-t-lg transition ${
               activeTab === "past"
-                ? "bg-green-400 text-[#2e1b1b]"
-                : "text-green-400 hover:bg-green-600 hover:bg-opacity-20"
+                ? "bg-green-800 text-white"
+                : "text-green-900 hover:bg-green-900 hover:bg-opacity-20"
             }`}
           >
             Past Events
@@ -78,19 +78,19 @@ function EventCourses() {
           {eventsToShow.map((event, idx) => (
             <div
               key={idx}
-              className="relative bg-[#4a1b1b] border border-green-400 rounded-lg shadow-lg p-6 hover:scale-[1.02] transition transform"
+              className="relative bg-[#0000] border border-red-900 rounded-lg shadow-lg p-6 hover:scale-[1.02] transition transform"
             >
-              <h2 className="text-2xl md:text-3xl font-bold mb-3 text-green-300">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3 text-red-800">
                 {event.name}
               </h2>
-              <ul className="list-disc pl-5 space-y-1 text-white">
+              <ul className="list-disc pl-5 space-y-1 text-black">
                 <li><b>Date:</b> {event.date}</li>
                 <li><b>Time:</b> {event.time}</li>
                 <li><b>Location:</b> {event.location}</li>
                 <li><b>Keynote:</b> {event.keynote}</li>
                 <li><b>Panel:</b> {event.panel}</li>
               </ul>
-              <button className="mt-4 bg-green-400 text-[#2e1b1b] font-semibold py-2 px-4 rounded hover:bg-green-500 transition">
+              <button className="mt-4 bg-red-800 text-white font-semibold py-2 px-4 rounded hover:bg-red-900 transition">
                 Learn More
               </button>
             </div>
