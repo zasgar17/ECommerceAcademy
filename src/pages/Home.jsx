@@ -11,7 +11,7 @@ function Home() {
       location: "Main Auditorium & Zoom",
       keynote: `"The Future of E-Commerce: AI, AR & Automation"`,
       panel: `"Sustainable Supply Chains in E-Commerce"`,
-      link: "/events-courses"
+      link: "https://htmlcolorcodes.com/colors/dark-red/"
     },
     {
       name: "Digital Marketing Masterclass",
@@ -25,7 +25,7 @@ function Home() {
   ];
   return (
     
-    <div className="pt-24">
+    <div className="pt-2">
       <Slider
     dots={true}
     infinite={true}
@@ -69,7 +69,7 @@ function Home() {
       </div>
 
       {/* New Release Marquee */}
-      <div className="bg-green-800 text-white py-2 overflow-hidden whitespace-nowrap">
+      <div className="bg-red-700 text-white py-2 overflow-hidden whitespace-nowrap">
         <marquee behavior="scroll" direction="left" className="text-sm font-semibold tracking-widest">
           🎉 New Release: Join our upcoming Innovation Summit | Masterclass in Digital Marketing | Collaboration with ADA Tech Clubs! 🎉
         </marquee>
