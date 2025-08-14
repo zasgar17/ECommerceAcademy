@@ -1,7 +1,28 @@
 import React from 'react';
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 
 function Home() {
+    const events = [
+    {
+      name: "E-Commerce Innovation Summit",
+      date: "August 15, 2025",
+      time: "2:00 PM – 5:30 PM (GMT+4)",
+      location: "Main Auditorium & Zoom",
+      keynote: `"The Future of E-Commerce: AI, AR & Automation"`,
+      panel: `"Sustainable Supply Chains in E-Commerce"`,
+      link: "/events-courses"
+    },
+    {
+      name: "Digital Marketing Masterclass",
+      date: "September 10, 2025",
+      time: "3:00 PM – 6:00 PM (GMT+4)",
+      location: "Room 202, Tech Building & Zoom",
+      keynote: `"Maximizing Conversions in 2025"`,
+      panel: `"Emerging Tools for Student Entrepreneurs"`,
+      link: "/events-courses"
+    },
+  ];
   return (
     
     <div className="pt-24">
@@ -81,17 +102,67 @@ function Home() {
         ))}
       </div>
 
-      <section>
-        <h2 className="text-2xl font-semibold">Upcoming Event: E-Commerce Innovation Summit</h2>
-        <ul className="list-disc pl-5 mt-2 space-y-1">
-          <li><b>Date:</b> August 15, 2025</li>
-          <li><b>Time:</b> 2:00 PM – 5:30 PM (GMT+4)</li>
-          <li><b>Location:</b> Main Auditorium & Zoom</li>
-          <li><b>Keynote:</b> "The Future of E-Commerce: AI, AR & Automation"</li>
-          <li><b>Panel:</b> "Sustainable Supply Chains in E-Commerce"</li>
-          <li>Student Startup Pitches & Networking Hour</li>
-        </ul>
-      </section>
+      {/* Upcoming Events Section */}
+      <div className="px-6 md:px-20 py-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+        {events.map((event, idx) => (
+          <div key={idx} className="relative border rounded-lg shadow-lg p-6 bg-white">
+            {/* See All link */}
+            <Link
+              to="/events-courses"
+              className="absolute top-3 right-3 text-sm font-semibold text-red-900 hover:underline"
+            >
+              See All
+            </Link>
+
+            {/* Event Name */}
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-[#8B0000]">{event.name}</h2>
+
+            {/* Event Details */}
+            <ul className="list-disc pl-5 space-y-1 text-gray-700">
+              <li><b>Date:</b> {event.date}</li>
+              <li><b>Time:</b> {event.time}</li>
+              <li><b>Location:</b> {event.location}</li>
+              <li><b>Keynote:</b> {event.keynote}</li>
+              <li><b>Panel:</b> {event.panel}</li>
+            </ul>
+
+            {/* Optional Button */}
+            <div className="mt-4">
+              <Link
+                to={event.link}
+                className="inline-block bg-red-800 text-white py-2 px-4 rounded hover:bg-red-900 transition"
+              >
+                Learn More
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// Slider Arrows
+function SampleNextArrow(props) {
+  const { onClick } = props;
+  return (
+    <div
+      onClick={onClick}
+      className="absolute top-1/2 right-4 transform -translate-y-1/2 z-10 cursor-pointer transition-opacity duration-300 opacity-30 hover:opacity-100 text-white text-4xl"
+    >
+      ❯
+    </div>
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { onClick } = props;
+  return (
+    <div
+      onClick={onClick}
+      className="absolute top-1/2 left-4 transform -translate-y-1/2 z-10 cursor-pointer transition-opacity duration-300 opacity-30 hover:opacity-100 text-white text-4xl"
+    >
+      ❮
     </div>);
     
     function SampleNextArrow(props) {
